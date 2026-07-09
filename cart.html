@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/all.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Cart Page</title>
+</head>
+<body>
+    <!-- header -->
+     <header class="top-0 w-full fixed h-24 bg-slate-100 z-10">
+        <!-- Container -->
+         <div class="m-auto h-full flex justify-between items-center ">
+            <a href="index.html" target="_blank" rel="noopener noreferrer" class="h-full flex items-center">
+                <img src="images/E__1_-removebg-preview.png" alt="" srcset=""  class="h-full">
+            </a>
+            <!-- user logged -->
+            <div class="flex items-center gap-8 mr-8">
+                <p>Hello, userName</p>
+                <div class="text-blue-500 hover:text-blue-600 hover:cursor-pointer">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span>2</span>
+                </div>
+                <button class="text-red-500 py-2 px-4 border-1 duration-300 border-red-500 rounded-sm hover:bg-red-500 hover:cursor-pointer hover:text-white">Logout</button>
+            </div>
+         </div>
+         <!-- /Container -->
+     </header>
+     <!-- /header -->
+     <!-- cart-products -->
+     <section class="mt-30 w-[70%] mx-auto p-8 min-h-80">
+        <!-- cart-container -->
+        <div class="grid grid-cols-2 gap-x-28 gap-y-10">
+            <!-- cart-product -->
+             <div class="w-[100%] h-48 border-1 border-gray-200 flex p-4 gap-4 rounded-sm duration-300 hover:-translate-y-2 hover:border-red-500 hover:shadow-xl">
+                <!-- product-img -->
+                <div class="w-1/5 flex flex-col justify-center">
+                    <img src="images/p-1.jpg" alt="" srcset="" class="rounded-lg">
+                </div>
+                <!-- /product-img -->
+                <!-- product-info -->
+                <div class="space-y-3">
+                    <h3 class="text-xl font-semibold">Golden Watch</h3>
+                    <p>Category: Watches</p>
+                    <p>Price: 50$</p>
+                    <!-- product-footer -->
+                    <div class="flex gap-8 items-center">
+                        <!-- product-quantity -->
+                        <div class="flex gap-1 items-center">
+                            <span class="border-1 border-gray-400 rounded-lg px-2 py-1 duration-300 hover:bg-gray-500 hover:text-white hover:cursor-pointer">-</span>
+                            <span>2</span>
+                            <span class="border-1 border-gray-400 rounded-lg px-2 py-1 duration-300 hover:bg-gray-500 hover:text-white hover:cursor-pointer">+</span>
+                        </div>
+                        <button class="bg-red-600 rounded-md p-2 text-gray-100 duration-300 hover:cursor-pointer hover:bg-red-700">Remove From Cart</button>
+                    </div>
+                </div>
+                <!-- /product-info -->
+             </div>
+             <div class="w-[100%] h-48 border-1 border-gray-200 flex p-4 gap-4 rounded-sm duration-300 hover:-translate-y-2 hover:border-red-500 hover:shadow-xl">
+                <!-- product-img -->
+                <div class="w-1/5 flex flex-col justify-center">
+                    <img src="images/p-1.jpg" alt="" srcset="" class="rounded-lg">
+                </div>
+                <!-- /product-img -->
+                <!-- product-info -->
+                <div class="space-y-3">
+                    <h3 class="text-xl font-semibold">Golden Watch</h3>
+                    <p>Category: Watches</p>
+                    <p>Price: 50$</p>
+                    <!-- product-footer -->
+                    <div class="flex gap-8 items-center">
+                        <!-- product-quantity -->
+                        <div class="flex gap-1 items-center">
+                            <span class="border-1 border-gray-400 rounded-lg px-2 py-1 duration-300 hover:bg-gray-500 hover:text-white hover:cursor-pointer">-</span>
+                            <span>2</span>
+                            <span class="border-1 border-gray-400 rounded-lg px-2 py-1 duration-300 hover:bg-gray-500 hover:text-white hover:cursor-pointer">+</span>
+                        </div>
+                        <button class="bg-red-600 rounded-md p-2 text-gray-100 duration-300 hover:cursor-pointer hover:bg-red-700">Remove From Cart</button>
+                    </div>
+                </div>
+                <!-- /product-info -->
+             </div>
+             <div class="w-[100%] h-48 border-1 border-gray-200 flex p-4 gap-4 rounded-sm duration-300 hover:-translate-y-2 hover:border-red-500 hover:shadow-xl">
+                <!-- product-img -->
+                <div class="w-1/5 flex flex-col justify-center">
+                    <img src="images/p-1.jpg" alt="" srcset="" class="rounded-lg">
+                </div>
+                <!-- /product-img -->
+                <!-- product-info -->
+                <div class="space-y-3">
+                    <h3 class="text-xl font-semibold">Golden Watch</h3>
+                    <p>Category: Watches</p>
+                    <p>Price: 50$</p>
+                    <!-- product-footer -->
+                    <div class="flex gap-8 items-center">
+                        <!-- product-quantity -->
+                        <div class="flex gap-1 items-center">
+                            <span class="border-1 border-gray-400 rounded-lg px-2 py-1 duration-300 hover:bg-gray-500 hover:text-white hover:cursor-pointer">-</span>
+                            <span>2</span>
+                            <span class="border-1 border-gray-400 rounded-lg px-2 py-1 duration-300 hover:bg-gray-500 hover:text-white hover:cursor-pointer">+</span>
+                        </div>
+                        <button class="bg-red-600 rounded-md p-2 text-gray-100 duration-300 hover:cursor-pointer hover:bg-red-700">Remove From Cart</button>
+                    </div>
+                </div>
+                <!-- /product-info -->
+             </div>
+             <div class="w-[100%] h-48 border-1 border-gray-200 flex p-4 gap-4 rounded-sm duration-300 hover:-translate-y-2 hover:border-red-500 hover:shadow-xl">
+                <!-- product-img -->
+                <div class="w-1/5 flex flex-col justify-center">
+                    <img src="images/p-1.jpg" alt="" srcset="" class="rounded-lg">
+                </div>
+                <!-- /product-img -->
+                <!-- product-info -->
+                <div class="space-y-3">
+                    <h3 class="text-xl font-semibold">Golden Watch</h3>
+                    <p>Category: Watches</p>
+                    <p>Price: 50$</p>
+                    <!-- product-footer -->
+                    <div class="flex gap-8 items-center">
+                        <!-- product-quantity -->
+                        <div class="flex gap-1 items-center">
+                            <span class="border-1 border-gray-400 rounded-lg px-2 py-1 duration-300 hover:bg-gray-500 hover:text-white hover:cursor-pointer">-</span>
+                            <span>2</span>
+                            <span class="border-1 border-gray-400 rounded-lg px-2 py-1 duration-300 hover:bg-gray-500 hover:text-white hover:cursor-pointer">+</span>
+                        </div>
+                        <button class="bg-red-600 rounded-md p-2 text-gray-100 duration-300 hover:cursor-pointer hover:bg-red-700">Remove From Cart</button>
+                    </div>
+                </div>
+                <!-- /product-info -->
+             </div>
+             <div class="w-[100%] h-48 border-1 border-gray-200 flex p-4 gap-4 rounded-sm duration-300 hover:-translate-y-2 hover:border-red-500 hover:shadow-xl">
+                <!-- product-img -->
+                <div class="w-1/5 flex flex-col justify-center">
+                    <img src="images/p-1.jpg" alt="" srcset="" class="rounded-lg">
+                </div>
+                <!-- /product-img -->
+                <!-- product-info -->
+                <div class="space-y-3">
+                    <h3 class="text-xl font-semibold">Golden Watch</h3>
+                    <p>Category: Watches</p>
+                    <p>Price: 50$</p>
+                    <!-- product-footer -->
+                    <div class="flex gap-8 items-center">
+                        <!-- product-quantity -->
+                        <div class="flex gap-1 items-center">
+                            <span class="border-1 border-gray-400 rounded-lg px-2 py-1 duration-300 hover:bg-gray-500 hover:text-white hover:cursor-pointer">-</span>
+                            <span>2</span>
+                            <span class="border-1 border-gray-400 rounded-lg px-2 py-1 duration-300 hover:bg-gray-500 hover:text-white hover:cursor-pointer">+</span>
+                        </div>
+                        <button class="bg-red-600 rounded-md p-2 text-gray-100 duration-300 hover:cursor-pointer hover:bg-red-700">Remove From Cart</button>
+                    </div>
+                </div>
+                <!-- /product-info -->
+             </div>
+             <div class="w-[100%] h-48 border-1 border-gray-200 flex p-4 gap-4 rounded-sm duration-300 hover:-translate-y-2 hover:border-red-500 hover:shadow-xl">
+                <!-- product-img -->
+                <div class="w-1/5 flex flex-col justify-center">
+                    <img src="images/p-1.jpg" alt="" srcset="" class="rounded-lg">
+                </div>
+                <!-- /product-img -->
+                <!-- product-info -->
+                <div class="space-y-3">
+                    <h3 class="text-xl font-semibold">Golden Watch</h3>
+                    <p>Category: Watches</p>
+                    <p>Price: 50$</p>
+                    <!-- product-footer -->
+                    <div class="flex gap-8 items-center">
+                        <!-- product-quantity -->
+                        <div class="flex gap-1 items-center">
+                            <span class="border-1 border-gray-400 rounded-lg px-2 py-1 duration-300 hover:bg-gray-500 hover:text-white hover:cursor-pointer">-</span>
+                            <span>2</span>
+                            <span class="border-1 border-gray-400 rounded-lg px-2 py-1 duration-300 hover:bg-gray-500 hover:text-white hover:cursor-pointer">+</span>
+                        </div>
+                        <button class="bg-red-600 rounded-md p-2 text-gray-100 duration-300 hover:cursor-pointer hover:bg-red-700">Remove From Cart</button>
+                    </div>
+                </div>
+                <!-- /product-info -->
+             </div>
+             <div class="w-[100%] h-48 border-1 border-gray-200 flex p-4 gap-4 rounded-sm duration-300 hover:-translate-y-2 hover:border-red-500 hover:shadow-xl">
+                <!-- product-img -->
+                <div class="w-1/5 flex flex-col justify-center">
+                    <img src="images/p-1.jpg" alt="" srcset="" class="rounded-lg">
+                </div>
+                <!-- /product-img -->
+                <!-- product-info -->
+                <div class="space-y-3">
+                    <h3 class="text-xl font-semibold">Golden Watch</h3>
+                    <p>Category: Watches</p>
+                    <p>Price: 50$</p>
+                    <!-- product-footer -->
+                    <div class="flex gap-8 items-center">
+                        <!-- product-quantity -->
+                        <div class="flex gap-1 items-center">
+                            <span class="border-1 border-gray-400 rounded-lg px-2 py-1 duration-300 hover:bg-gray-500 hover:text-white hover:cursor-pointer">-</span>
+                            <span>2</span>
+                            <span class="border-1 border-gray-400 rounded-lg px-2 py-1 duration-300 hover:bg-gray-500 hover:text-white hover:cursor-pointer">+</span>
+                        </div>
+                        <button class="bg-red-600 rounded-md p-2 text-gray-100 duration-300 hover:cursor-pointer hover:bg-red-700">Remove From Cart</button>
+                    </div>
+                </div>
+                <!-- /product-info -->
+             </div>
+             <div class="w-[100%] h-48 border-1 border-gray-200 flex p-4 gap-4 rounded-sm duration-300 hover:-translate-y-2 hover:border-red-500 hover:shadow-xl">
+                <!-- product-img -->
+                <div class="w-1/5 flex flex-col justify-center">
+                    <img src="images/p-1.jpg" alt="" srcset="" class="rounded-lg">
+                </div>
+                <!-- /product-img -->
+                <!-- product-info -->
+                <div class="space-y-3">
+                    <h3 class="text-xl font-semibold">Golden Watch</h3>
+                    <p>Category: Watches</p>
+                    <p>Price: 50$</p>
+                    <!-- product-footer -->
+                    <div class="flex gap-8 items-center">
+                        <!-- product-quantity -->
+                        <div class="flex gap-1 items-center">
+                            <span class="border-1 border-gray-400 rounded-lg px-2 py-1 duration-300 hover:bg-gray-500 hover:text-white hover:cursor-pointer">-</span>
+                            <span>2</span>
+                            <span class="border-1 border-gray-400 rounded-lg px-2 py-1 duration-300 hover:bg-gray-500 hover:text-white hover:cursor-pointer">+</span>
+                        </div>
+                        <button class="bg-red-600 rounded-md p-2 text-gray-100 duration-300 hover:cursor-pointer hover:bg-red-700">Remove From Cart</button>
+                    </div>
+                </div>
+                <!-- /product-info -->
+             </div>
+             <div class="w-[100%] h-48 border-1 border-gray-200 flex p-4 gap-4 rounded-sm duration-300 hover:-translate-y-2 hover:border-red-500 hover:shadow-xl">
+                <!-- product-img -->
+                <div class="w-1/5 flex flex-col justify-center">
+                    <img src="images/p-1.jpg" alt="" srcset="" class="rounded-lg">
+                </div>
+                <!-- /product-img -->
+                <!-- product-info -->
+                <div class="space-y-3">
+                    <h3 class="text-xl font-semibold">Golden Watch</h3>
+                    <p>Category: Watches</p>
+                    <p>Price: 50$</p>
+                    <!-- product-footer -->
+                    <div class="flex gap-8 items-center">
+                        <!-- product-quantity -->
+                        <div class="flex gap-1 items-center">
+                            <span class="border-1 border-gray-400 rounded-lg px-2 py-1 duration-300 hover:bg-gray-500 hover:text-white hover:cursor-pointer">-</span>
+                            <span>2</span>
+                            <span class="border-1 border-gray-400 rounded-lg px-2 py-1 duration-300 hover:bg-gray-500 hover:text-white hover:cursor-pointer">+</span>
+                        </div>
+                        <button class="bg-red-600 rounded-md p-2 text-gray-100 duration-300 hover:cursor-pointer hover:bg-red-700">Remove From Cart</button>
+                    </div>
+                </div>
+                <!-- /product-info -->
+             </div>
+             <div class="w-[100%] h-48 border-1 border-gray-200 flex p-4 gap-4 rounded-sm duration-300 hover:-translate-y-2 hover:border-red-500 hover:shadow-xl">
+                <!-- product-img -->
+                <div class="w-1/5 flex flex-col justify-center">
+                    <img src="images/p-1.jpg" alt="" srcset="" class="rounded-lg">
+                </div>
+                <!-- /product-img -->
+                <!-- product-info -->
+                <div class="space-y-3">
+                    <h3 class="text-xl font-semibold">Golden Watch</h3>
+                    <p>Category: Watches</p>
+                    <p>Price: 50$</p>
+                    <!-- product-footer -->
+                    <div class="flex gap-8 items-center">
+                        <!-- product-quantity -->
+                        <div class="flex gap-1 items-center">
+                            <span class="border-1 border-gray-400 rounded-lg px-2 py-1 duration-300 hover:bg-gray-500 hover:text-white hover:cursor-pointer">-</span>
+                            <span>2</span>
+                            <span class="border-1 border-gray-400 rounded-lg px-2 py-1 duration-300 hover:bg-gray-500 hover:text-white hover:cursor-pointer">+</span>
+                        </div>
+                        <button class="bg-red-600 rounded-md p-2 text-gray-100 duration-300 hover:cursor-pointer hover:bg-red-700">Remove From Cart</button>
+                    </div>
+                </div>
+                <!-- /product-info -->
+             </div>
+        </div>
+        <!-- cart-container -->
+         <p class="text-2xl text-center font-semibold mt-8">Total Price: 400$</p>
+     </section>
+     <!-- cart-products -->
+      <hr class="text-gray-200">
+
+      <!-- Favourite-items -->
+      <section class="min-h-60 w-[70%] p-8 m-auto">
+        <h2 class="relative text-center p-4 text-3xl font-semibold
+                    before:absolute 
+                    before:w-1/5
+                    before:h-[2px]
+                    before:bottom-0
+                    before:left-1/2
+                    before:-translate-x-1/2
+                    before:origin-center
+                    before:duration-300
+                    before:bg-red-500
+                    hover:before:w-4/5">Favourite Items</h2>
+        
+        <!-- Favourite-Container -->
+         <div class="overflow-x-scroll p-8 flex gap-4">
+            <!-- Favourite-item -->
+            <div class="w-72 min-h-72 shrink-0 flex flex-col items-center border-1 border-gray-300 rounded-sm duration-300 hover:border-2 hover:border-red-500 hover:-translate-y-2 hover:shadow-lg">
+                <img src="images/p-1.jpg" alt="" srcset="" class="h-52 w-full rounded-t-sm">
+                <!-- Favourite-info -->
+                <div class="p-4 flex flex-col space-y-3">
+                    <h3 class="font-semibold text-xl">Golden Watch</h3>
+                    <p>Category: Watches</p>
+                    <i class="fa-solid fa-heart self-center"></i>
+                </div>
+                <!-- /Favourite-info -->
+            </div>
+            <!-- /Favourite-item -->
+            <!-- Favourite-item -->
+            <div class="w-72 min-h-72 shrink-0 flex flex-col items-center border-1 border-gray-300 rounded-sm duration-300 hover:border-2 hover:border-red-500 hover:-translate-y-2 hover:shadow-lg">
+                <img src="images/p-1.jpg" alt="" srcset="" class="h-52 w-full rounded-t-sm">
+                <!-- Favourite-info -->
+                <div class="p-4 flex flex-col space-y-3">
+                    <h3 class="font-semibold text-xl">Golden Watch</h3>
+                    <p>Category: Watches</p>
+                    <i class="fa-solid fa-heart self-center"></i>
+                </div>
+                <!-- /Favourite-info -->
+            </div>
+            <!-- /Favourite-item -->
+            <!-- Favourite-item -->
+            <div class="w-72 min-h-72 shrink-0 flex flex-col items-center border-1 border-gray-300 rounded-sm duration-300 hover:border-2 hover:border-red-500 hover:-translate-y-2 hover:shadow-lg">
+                <img src="images/p-1.jpg" alt="" srcset="" class="h-52 w-full rounded-t-sm">
+                <!-- Favourite-info -->
+                <div class="p-4 flex flex-col space-y-3">
+                    <h3 class="font-semibold text-xl">Golden Watch</h3>
+                    <p>Category: Watches</p>
+                    <i class="fa-solid fa-heart self-center"></i>
+                </div>
+                <!-- /Favourite-info -->
+            </div>
+            <!-- /Favourite-item -->
+            <!-- Favourite-item -->
+            <div class="w-72 min-h-72 shrink-0 flex flex-col items-center border-1 border-gray-300 rounded-sm duration-300 hover:border-2 hover:border-red-500 hover:-translate-y-2 hover:shadow-lg">
+                <img src="images/p-1.jpg" alt="" srcset="" class="h-52 w-full rounded-t-sm">
+                <!-- Favourite-info -->
+                <div class="p-4 flex flex-col space-y-3">
+                    <h3 class="font-semibold text-xl">Golden Watch</h3>
+                    <p>Category: Watches</p>
+                    <i class="fa-solid fa-heart self-center"></i>
+                </div>
+                <!-- /Favourite-info -->
+            </div>
+            <!-- /Favourite-item -->
+            <!-- Favourite-item -->
+            <div class="w-72 min-h-72 shrink-0 flex flex-col items-center border-1 border-gray-300 rounded-sm duration-300 hover:border-2 hover:border-red-500 hover:-translate-y-2 hover:shadow-lg">
+                <img src="images/p-1.jpg" alt="" srcset="" class="h-52 w-full rounded-t-sm">
+                <!-- Favourite-info -->
+                <div class="p-4 flex flex-col space-y-3">
+                    <h3 class="font-semibold text-xl">Golden Watch</h3>
+                    <p>Category: Watches</p>
+                    <i class="fa-solid fa-heart self-center"></i>
+                </div>
+                <!-- /Favourite-info -->
+            </div>
+            <!-- /Favourite-item -->
+            <!-- Favourite-item -->
+            <div class="w-72 min-h-72 shrink-0 flex flex-col items-center border-1 border-gray-300 rounded-sm duration-300 hover:border-2 hover:border-red-500 hover:-translate-y-2 hover:shadow-lg">
+                <img src="images/p-1.jpg" alt="" srcset="" class="h-52 w-full rounded-t-sm">
+                <!-- Favourite-info -->
+                <div class="p-4 flex flex-col space-y-3">
+                    <h3 class="font-semibold text-xl">Golden Watch</h3>
+                    <p>Category: Watches</p>
+                    <i class="fa-solid fa-heart self-center"></i>
+                </div>
+                <!-- /Favourite-info -->
+            </div>
+            <!-- /Favourite-item -->
+         </div>
+         <!-- /Favourite-Container -->
+      </section>
+      <!-- /Favourite-items -->
+      <script src="js/script.js"></script>
+</body>
+</html>
