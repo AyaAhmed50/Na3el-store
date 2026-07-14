@@ -23,7 +23,9 @@ Register_submit.addEventListener('click', (e)=>{
                                 first:firstName.value,
                                 last:lastName.value}
             localStorage.setItem('users', JSON.stringify(users))
-            setTimeout(() => window.location = 'index.html',
+            localStorage.setItem('cart', JSON.stringify({}))
+            localStorage.setItem('favourite',JSON.stringify({}))
+            setTimeout(() => window.location = 'login.html',
                     2000)
         }
     }
