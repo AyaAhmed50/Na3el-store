@@ -1,10 +1,28 @@
 // ************************* Header **********************
-let CartNumber = document.getElementById('cart-numb')
+let userLogged = localStorage.getItem('userLogged') // hold Email
+let userData = JSON.parse(localStorage.getItem('users'))[userLogged] // hold total info
+let loggedIN = (localStorage.getItem('LoggedIN')==='true') || false // indicate if user is online or not
+let cart = JSON.parse(localStorage.getItem('cart')) || {}
+let favourite = JSON.parse(localStorage.getItem('favourite')) || {}
+
+// ************************* Header-Dom **********************
+let user_data = document.querySelector('#user_data')
+let guest_bar = document.querySelector('#user-unlogged')
 let UserName = document.getElementById('user-name')
+let CartNumber = document.getElementById('cart-numb')
+let logout_btn = document.querySelector('#logout_btn')
 
-UserName.innerText = JSON.parse(localStorage.getItem('userLogged'))
 
+function showUserData(){
+    if(loggedIN){
+        UserName.innerText = userData.first + ' ' + userData.last
+        CartNumber.innerText = Object.keys(cart).length
 
+        user_data.classList.replace('hidden', 'flex')
+        guest_bar.classList.add('hidden')
+    }
+}
+showUserData();
 class Product{
     constructor(id, name, price, Category,genre, img){
         this.id = id
@@ -37,16 +55,16 @@ function showProducts(ProductList){
     ProductList.forEach(product => {
         const productCard = `
             <!-- Product -->
-                <div class="h-[30rem] border-1 border-gray-300 rounded-md duration-300 hover:-translate-y-2 hover:border-blue-500 hover:shadow-2xl overflow-hidden">
+                <div class="h-[30rem] border-1 border-gray-300 rounded-md duration-300 hover:-translate-y-2 hover:border-blue-500 hover:shadow-2xl overflow-hidden" data-id =${product.id}>
                     <img src="${product.img}" alt="" srcset="" class="h-[60%] w-full rounded-t-sm duration-200 hover:scale-105 hover:origin-center">
                     <!-- product-info -->
                     <div class="w-1/2 m-auto py-4 space-y-2">
-                        <h3 class="text-xl font-semibold" ${product.name}>Golden Watch</h3>
+                        <h3 class="text-xl font-semibold">${product.name}</h3>
                         <p>Price: ${product.price}$</p>
                         <p>Category: ${product.category}</p>
                         <div class="space-x-2">
                             <i class="fa-solid fa-heart hover:cursor-pointer" id="favourite"></i>
-                            <button class="p-2 border-1 rounded-sm bg-blue-500 text-white hover:bg-blue-600 hover:cursor-pointer my-2"  id="product-cart">Add to Cart</button>
+                            <button class="p-2 border-1 rounded-sm bg-blue-500 text-white hover:bg-blue-600 hover:cursor-pointer my-2"  id="addToCart">Add to Cart</button>
                         </div>
                     </div>
                 </div>`
@@ -56,13 +74,16 @@ function showProducts(ProductList){
 showProducts(products);
 
 
+document.getElementById('search-keyword').addEventListener('keyup', (e)=>{
+    let keyword = e.target.value.toLowerCase()
+    let filter_type = document.getElementById('filter')
+    let filtered_products = products.filter(p => {
+        return p[filter_type].toLowerCase().includes(keyword)
+    }) 
+    showProducts(filtered_products)
+})
 
-let loggedIN = (localStorage.getItem('LoggedIN')==='true') || false
-let userLogged = localStorage.getItem('userLogged')
-let logout_btn = document.querySelector('#logout_btn')
-let user_data = document.querySelector('#user_data')
-let guest_bar = document.querySelector('#user-unlogged')
-
+// Add cartItem function
 if(loggedIN){
     user_data.classList.replace('hidden', 'flex')
     guest_bar.classList.add('hidden')
