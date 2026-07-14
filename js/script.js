@@ -1,5 +1,8 @@
 // ************************* Header **********************
+let CartNumber = document.getElementById('cart-numb')
+let UserName = document.getElementById('user-name')
 
+UserName.innerText = JSON.parse(localStorage.getItem('userLogged'))
 
 
 class Product{

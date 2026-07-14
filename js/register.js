@@ -25,6 +25,7 @@ Register_submit.addEventListener('click', (e)=>{
             localStorage.setItem('users', JSON.stringify(users))
             localStorage.setItem('cart', JSON.stringify({}))
             localStorage.setItem('favourite',JSON.stringify({}))
+            alert('Account Created Successfully.')
             setTimeout(() => window.location = 'login.html',
                     2000)
         }
