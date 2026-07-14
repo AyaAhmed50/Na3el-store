@@ -2,8 +2,8 @@
 let userLogged = localStorage.getItem('userLogged') // hold Email
 let userData = JSON.parse(localStorage.getItem('users'))[userLogged] // hold total info
 let loggedIN = (localStorage.getItem('LoggedIN')==='true') || false // indicate if user is online or not
-let cart = JSON.parse(localStorage.getItem('cart')) || {}
-let favourite = JSON.parse(localStorage.getItem('favourite')) || {}
+let cartItems = localStorage.getItem('cart')? JSON.parse(localStorage.getItem('cart')) : []
+let favouriteItems = localStorage.getItem('favourite')? JSON.parse(localStorage.getItem('favourite')) : []
 
 // ************************* Header-Dom **********************
 let user_data = document.querySelector('#user_data')
@@ -16,7 +16,7 @@ let logout_btn = document.querySelector('#logout_btn')
 function showUserData(){
     if(loggedIN){
         UserName.innerText = userData.first + ' ' + userData.last
-        CartNumber.innerText = Object.keys(cart).length
+        CartNumber.innerText = cartItems.length
 
         user_data.classList.replace('hidden', 'flex')
         guest_bar.classList.add('hidden')
@@ -63,8 +63,8 @@ function showProducts(ProductList){
                         <p>Price: ${product.price}$</p>
                         <p>Category: ${product.category}</p>
                         <div class="space-x-2">
-                            <i class="fa-solid fa-heart hover:cursor-pointer" id="favourite"></i>
-                            <button class="p-2 border-1 rounded-sm bg-blue-500 text-white hover:bg-blue-600 hover:cursor-pointer my-2"  id="addToCart">Add to Cart</button>
+                            <i class="fa-solid fa-heart ${favouriteItems.some(p => p.id === product.id) && loggedIN? 'text-red-500' : 'text-gray-800'} hover:cursor-pointer" id="favourite" onclick="toggleFavourite(${product.id})"></i>
+                            <button class="p-2 border-1 rounded-sm ${cartItems.some(p => p.id === product.id) && loggedIN ? 'bg-red-500 hover:bg-red-600' : 'bg-blue-500 hover:bg-blue-600'} text-white hover:cursor-pointer my-2" onclick="toggleCart(${product.id})">${cartItems.some(p => p.id === product.id) ? 'Remove from Cart' : 'Add to Cart'}</button>
                         </div>
                     </div>
                 </div>`
@@ -85,6 +85,52 @@ search.addEventListener('click', ()=>{
     }, 800);
 })
 
+function toggleFavourite(productId){
+    if(loggedIN){
+        let product = products.find(p => p.id == productId)
+        if(favouriteItems.some(p => p.id === productId)){ // the product is already in favourite and we delete it
+
+            favouriteItems = favouriteItems.filter(p => p.id !== productId)
+            product.favourite = false
+        }else{ // the product isn't in favourite and we add it
+            favouriteItems = [...favouriteItems, product]
+            product.favourite = true
+        }
+        localStorage.setItem('favourite', JSON.stringify(favouriteItems))
+        showProducts(products)
+    }else{
+        alert('Please login to add to favourite')
+        setTimeout(() => {
+            window.location = 'login.html'
+        }, 1500);
+    }
+}
+function toggleCart(productId){
+    if(loggedIN){
+        let product = products.find(p => p.id == productId)
+        if(cartItems.some(p => p.id === productId)){ // the product is already in cart and we delete it
+            cartItems = cartItems.filter(p => p.id !== productId)
+            product.cart = false
+        }else{ // the product isn't in cart and we add it
+            console.log(cartItems)
+            cartItems = [...cartItems, product]
+            product.cart = true
+        }
+        localStorage.setItem('cart', JSON.stringify(cartItems))
+        updateCart()
+        showProducts(products)
+    }else{
+        alert('Please login to add to cart')
+        setTimeout(() => {
+            window.location = 'login.html'
+        }, 1500);
+    }
+}
+function updateCart(){
+    CartNumber.innerText = JSON.parse(localStorage.getItem('cart')).reduce((total, p) => {
+        return p.cart? total + p.quantity : total;
+    }, 0);
+}
 // Add cartItem function
 if(loggedIN){
     user_data.classList.replace('hidden', 'flex')
@@ -95,10 +141,10 @@ logout_btn.addEventListener('click', ()=>{
 })
 
 function logout(){
-    localStorage.setItem('LoggedIN',false)
-    user_data.classList.replace('flex', 'hidden')
-    guest_bar.classList.remove('hidden')
     setTimeout(() => {
+        localStorage.setItem('LoggedIN',false)
+        user_data.classList.replace('flex', 'hidden')
+        guest_bar.classList.remove('hidden')
         window.location = 'index.html'
     }, 1500);
 }

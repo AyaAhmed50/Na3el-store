@@ -23,9 +23,13 @@
             <!-- user logged -->
             <div id="user_data" class="hidden items-center gap-8 mr-8">
                 <p>Hello, <span id="user-name">userName</span></p>
-                <div class="text-blue-500 hover:text-blue-600 hover:cursor-pointer">
+                <div class="text-blue-500 hover:text-blue-600 hover:cursor-pointer relative">
                     <i class="fa-solid fa-cart-shopping"></i>
                     <span id="cart-numb">0</span>
+                    <!-- side cart -->
+                    <div id="side-cart" class="absolute top-10 -left-10 w-32 min-h-60 bg-red-100">
+                        <a href="cart.html" target="_blank" rel="noopener noreferrer"></a>
+                    </div>
                 </div>
                 <button id="logout_btn" class="text-red-500 py-2 px-4 border-1 duration-300 border-red-500 rounded-sm hover:bg-red-500 hover:cursor-pointer hover:text-white">Logout</button>
             </div>
