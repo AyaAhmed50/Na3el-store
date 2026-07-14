@@ -73,14 +73,16 @@ function showProducts(ProductList){
 }
 showProducts(products);
 
-
-document.getElementById('search-keyword').addEventListener('keyup', (e)=>{
-    let keyword = e.target.value.toLowerCase()
+let search = document.getElementById('search')
+search.addEventListener('click', ()=>{
+    let keyword = document.getElementById('search-keyword').value.toLowerCase()
     let filter_type = document.getElementById('filter')
     let filtered_products = products.filter(p => {
-        return p[filter_type].toLowerCase().includes(keyword)
+        return p[filter_type.value].toLowerCase().includes(keyword)
     }) 
-    showProducts(filtered_products)
+    setTimeout(() => {
+        showProducts(filtered_products)
+    }, 800);
 })
 
 // Add cartItem function
