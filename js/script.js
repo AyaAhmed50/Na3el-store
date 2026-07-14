@@ -89,7 +89,6 @@ function toggleFavourite(productId){
     if(loggedIN){
         let product = products.find(p => p.id == productId)
         if(favouriteItems.some(p => p.id === productId)){ // the product is already in favourite and we delete it
-
             favouriteItems = favouriteItems.filter(p => p.id !== productId)
             product.favourite = false
         }else{ // the product isn't in favourite and we add it
@@ -131,15 +130,61 @@ function updateCart(){
         return p.cart? total + p.quantity : total;
     }, 0);
 }
-// Add cartItem function
-if(loggedIN){
-    user_data.classList.replace('hidden', 'flex')
-    guest_bar.classList.add('hidden')
+
+
+let sideCart = document.getElementById('side-cart')
+function showSideCart(products){
+    let sideContainer = document.getElementById('side-container')
+    sideContainer.innerHTML = ''
+    if(products.length === 0){
+        sideContainer.innerHTML = '<p class="text-center text-gray-500">Your cart is empty</p>'
+    }else{
+        products.forEach( (product) => {
+            const sideCard = `
+                <div class="flex bg-gray-200 rounded-sm p-2 space-x-2 h-24">
+                    <div class="w-1/2 space-y-1">
+                        <p>${product.name}</p>
+                        <div>
+                            <button onclick="sub(${product.id})" class="border-2 px-1 rounded-md">-</button>
+                            <span>${product.quantity}</span>
+                            <button onclick="add(${product.id})" class="border-2 px-1 rounded-md">+</button>
+                        </div>
+                    </div>
+                    <div class="w-1/2">
+                        <p>Price : </p>
+                        $<span>${product.quantity * product.price}</span>
+                    </div>
+                </div>
+            `
+            sideContainer.insertAdjacentHTML('beforeend', sideCard)
+        })
+    }
 }
-logout_btn.addEventListener('click', ()=>{
-    logout()
+let cartSummary = document.getElementById('cart-summary')
+cartSummary.addEventListener('click', (e)=>{
+    sideCart.classList.toggle('hidden')
+    if(!sideCart.classList.contains('hidden')){
+        showSideCart(JSON.parse(localStorage.getItem('cart')))
+    }
 })
 
+function add(productID){
+    cartItems = JSON.parse(localStorage.getItem('cart'))
+    cartItems.find(p => p.id === productID).quantity += 1
+    localStorage.setItem('cart', JSON.stringify(cartItems))
+    showSideCart(cartItems)
+    showProducts(products)
+    updateCart()
+}
+function sub(productID){
+    cartItems = JSON.parse(localStorage.getItem('cart'))
+    cartItems.find(p => p.id === productID).quantity -= 1
+    cartItems = cartItems.filter(item => item.quantity !== 0)
+    localStorage.setItem('cart', JSON.stringify(cartItems))
+    showSideCart(cartItems)
+    showProducts(products)
+    updateCart()
+}
 function logout(){
     setTimeout(() => {
         localStorage.setItem('LoggedIN',false)
@@ -148,4 +193,8 @@ function logout(){
         window.location = 'index.html'
     }, 1500);
 }
+logout_btn.addEventListener('click', ()=>{
+    logout()
+})
+
 
