@@ -16,18 +16,18 @@
                 <img src="images/E__1_-removebg-preview.png" alt="" srcset=""  class="h-full">
             </a>
             <!-- user unlogged -->
-            <div class="space-x-4 mr-4" id="user-unlogged">
+            <div class="space-x-2 mr-4" id="user-unlogged">
                 <a href="login.html" target="_blank" rel="noopener noreferrer"><button class="border-1 border-blue-500 text-blue-500 rounded px-6 py-2 hover:bg-blue-500 hover:text-white duration-300 hover:cursor-pointer">Login</button></a>
                 <a href="register.html" target="_blank" rel="noopener noreferrer"><button class="border-1 border-green-500 text-green-500 rounded px-6 py-2 hover:bg-green-500 hover:text-white duration-300 hover:cursor-pointer">Register</button></a>
             </div>
             <!-- user logged -->
-            <div id="user_data" class="hidden items-center gap-8 mr-8">
+            <div id="user_data" class="hidden justify-end lg:justify-start lg:gap-8 items-center gap-4 mr-8">
                 <p>Hello, <span id="user-name">userName</span></p>
                 <div class="text-blue-500 hover:text-blue-600 hover:cursor-pointer relative">
                     <i class="fa-solid fa-cart-shopping" id="cart-summary"></i>
                     <span id="cart-numb">0</span>
                     <!-- side cart -->
-                    <div id="side-cart" class="absolute hidden top-10 -left-10 w-48 bg-red-50 rounded-sm">
+                    <div id="side-cart" class="absolute hidden top-10 -left-20 w-64 bg-red-50 rounded-sm">
                         <div id="side-container" class="py-2 space-y-2">
                             
                         </div>
@@ -43,19 +43,19 @@
      <!-- /header -->
       <section class="mt-24 py-8">
          <!-- container -->
-        <div class="w-4/6 m-auto">
+        <div class="w-5/6 lg:w-5/6  xl:w-4/6 m-auto">
             <!-- section heading -->
-            <div class="flex justify-between gap-4">
-                <select id="filter" name="filter" class="border-1 border-gray-300 rounded-sm py-2 px-4 focus:outline-4 focus:outline-blue-200">
-                    <option value="name">Search by Product Name</option>
-                    <option value="category">Search by Category</option>
+            <div class="flex justify-center gap-4">
+                <select id="filter" name="filter"  class="w-1/3 border-1 border-gray-300 rounded-sm py-2 px-4 focus:outline-none focus:ring-4 focus:ring-blue-200">
+                    <option value="name" class="w-1/3 text-wrap">Search by Product Name</option>
+                    <option value="category" class="w-1/3 text-wrap">Search by Category</option>
                 </select>
-                <input type="text" id="search-keyword" placeholder="Search..." class="w-5/6 border-1 border-gray-300 rounded-sm py-2 px-4 outline-blue-200 duration-300 focus:outline-4 focus:outline-blue-200">
-                <button class="py-2 px-12 bg-gray-800 rounded-sm text-gray-100 hover:cursor-pointer hover:bg-black hover:text-white duration-300" id="search">Search</button>
+                <input type="text" id="search-keyword" placeholder="Search..." class="md:w-4/6 lg:w-full xl:w-5/6 border-1 border-gray-300 rounded-sm py-2 px-4 focus:outline-none duration-300 focus:ring-4 focus:ring-blue-200">
+                <button class="py-2 px-4 md:px-6 lg:px-12 bg-gray-800 rounded-sm text-gray-100 hover:cursor-pointer hover:bg-black hover:text-white duration-300" id="search">Search</button>
             </div>
              <!-- /section heading -->
              <!-- Product-container -->
-            <div class="mt-10 grid grid-cols-3 gap-8" id="product-container">
+            <div class="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="product-container">
                 
             </div>
          </div>
